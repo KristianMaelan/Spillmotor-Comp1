@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7019a36fea7263b40951fbb454cae159
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RaindropPF: {fileID: 8567784376067689602, guid: 24246ff1bb25d6740aa40ada5133bf6d,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
