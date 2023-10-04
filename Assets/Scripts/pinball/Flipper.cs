@@ -16,7 +16,6 @@ public class Flipper : MonoBehaviour
     private float _timer = 1;
     private bool bumperUp = false;
     private float bumperResetTime = 0.35f;
-    
     private Quaternion _startRot;
 
 //When object is awake, calls this
@@ -26,6 +25,7 @@ public class Flipper : MonoBehaviour
         //setting the variables when object wakes
         _rb = GetComponent<Rigidbody>();
         _startRot = transform.rotation;
+        
     }
 
 //Update is called every frame. 
@@ -54,18 +54,37 @@ public class Flipper : MonoBehaviour
                     _timer = 0;
                     //inputTrue = true;
                     Debug.LogWarning($"Right Bumper pressed");
+                    bumperUp = true;
                 }
             }
         }
 
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            if (_timer > 0.25)
+            if (bumperNumber == 0)
             {
-                _timer = 0;
-            }
-            Debug.LogWarning($"Left Bumper released");
+                
+                if (_timer > 0.25)
+                {
+                    _timer = 0;
+                }
+                Debug.LogWarning($"Left Bumper released");
             bumperUp = false;
+            }
+        }
+        
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            if (bumperNumber == 1)
+            {
+                
+                if (_timer > 0.25)
+                {
+                    _timer = 0;
+                }
+                Debug.LogWarning($"Right Bumper released");
+            bumperUp = false;
+            }
         }
 
 
